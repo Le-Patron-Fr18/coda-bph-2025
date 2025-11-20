@@ -58,10 +58,8 @@ $students = [   // variable tableau / liste étudiants
                     <section>
                         <h2>Notes : </h2>
                         <ul>
-                          
                         <?php foreach($student["grades"] as $note) { ?> <!-- boucle notes -->
                             <li><?= $note ?> </li>
-                        
                         <?php } ?>
                         </ul>
                     </section>
