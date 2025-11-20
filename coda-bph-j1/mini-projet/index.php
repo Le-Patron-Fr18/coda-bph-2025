@@ -1,6 +1,6 @@
 <?php
 
-$students = [   // variable tableau / liste étudiants
+$students = [
     [
         "firstName" => "Hannah",
         "lastName" => "Fields",
@@ -33,6 +33,14 @@ $students = [   // variable tableau / liste étudiants
     ]
 ];
 
+function computeAverage(array $grades): float {  // Fonction pour calculer la moyenne des notes
+    if (empty($grades)) {
+        return 0.0;
+    }
+    
+    return array_sum($grades) / count($grades);
+}
+
 ?>
 
 <!doctype html>
@@ -49,26 +57,28 @@ $students = [   // variable tableau / liste étudiants
             Liste des étudiants
         </h2>
         <ul id="students">
-        <?php foreach($students as $student) { ?> 
-            <li>
-                <article class="">
-                    <header>
-                        <h1><?= $student["firstName"] . " " . $student["lastName"] ?></h1> <!-- affichage nom et prénom -->
-                    </header>
-                    <section>
-                        <h2>Notes : </h2>
-                        <ul>
-                        <?php foreach($student["grades"] as $note) { ?> <!-- boucle notes -->
-                            <li><?= $note ?> </li>
-                        <?php } ?>
-                        </ul>
-                    </section>
-                    <footer>
-                        <h3>Moyenne des notes de l'étudiant </h3>
-                    </footer>
-                </article>
-            </li>
-        <?php } ?>
+        <?php foreach($students as $student) {                      // Calculer la moyenne pour chaque étudiant 
+            $average = computeAverage($student["grades"]);
+        ?> 
+        <li>
+          <article class="">
+               <header>
+                    <h1><?= $student["firstName"] . " " . $student["lastName"] ?></h1>     // Afficher le nom de l'étudiant
+                        </header>
+                            <section>
+                                <h2>Notes : </h2>
+                                <ul>
+                                    <?php foreach($student["grades"] as $note) { ?>   // Afficher les notes
+                                    <li><?= $note ?></li>
+                                    <?php } ?>
+                                </ul>
+                            </section>
+                            <footer>
+                                <h3>Moyenne : <?= number_format($average, 2) ?>/20</h3>    // Affichage de la moyenne
+                            </footer>
+            </article>
+        </li>
+            <?php } ?>
         </ul>
     </body>
 </html>
