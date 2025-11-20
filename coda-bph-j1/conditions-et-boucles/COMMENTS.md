@@ -1,0 +1,3 @@
+## Exercice 2
+
+Merci de m'avoir noté le prompt Copilot 🙂
