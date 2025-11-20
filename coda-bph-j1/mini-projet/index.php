@@ -53,14 +53,16 @@ $students = [   // variable tableau / liste étudiants
             <li>
                 <article class="">
                     <header>
-                        <h1><?= $student["firstName"] . " " . $student["lastName"] ?></h1>
+                        <h1><?= $student["firstName"] . " " . $student["lastName"] ?></h1> <!-- affichage nom et prénom -->
                     </header>
                     <section>
                         <h2>Notes : </h2>
                         <ul>
-                            <li>Note 1</li>
-                             <li>Note 2</li>
-                            <li>Note 3</li>
+                          
+                        <?php foreach($student["grades"] as $note) { ?> <!-- boucle notes -->
+                            <li><?= $note ?> </li>
+                        
+                        <?php } ?>
                         </ul>
                     </section>
                     <footer>
