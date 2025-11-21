@@ -48,6 +48,7 @@ function computeAverage(array $grades): float {  // Fonction pour calculer la mo
     <head>
         <meta charset="utf-8" />
         <title>Bulletin de notes</title>
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
         <h1>

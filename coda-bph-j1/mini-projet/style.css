@@ -1,0 +1,12 @@
+.inferieur {                # les moyennes inférieures à 10
+    color : red;
+}
+
+.moyenne {                  # les moyennes entre 10 et 13
+    color : orange; 
+}
+
+.superieur {                 # les moyennes supérieures à 13
+    color : green; 
+}
+
