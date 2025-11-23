@@ -1,0 +1,1 @@
+Tout le code que j'ai pue faire pour le projet héro, vien des connaissanece que j'ai pue aquérir depuis le début de l'année, cependant j'ai utliser CHATgpt pour m'aider à créer une histoir cependant tout le code est fait maison. 
