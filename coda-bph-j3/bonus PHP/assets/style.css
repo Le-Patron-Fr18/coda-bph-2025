@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+    font-size: 18px;
+}
+
+body {
+    display: grid;
+    padding: 0;
+    margin: 0;
+    grid-template-rows: 20vh 70vh 10vh;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body > header {
+    display: grid;
+    background-color: #4e148c;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+}
+
+body > header > h1 {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2rem;
+    text-align: center;
+}
+
+body > header nav {
+    display: grid;
+}
+
+body > header > nav > ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    text-align: center;
+}
+
+body > header > nav > ul a{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    text-underline-offset: 0.4rem;
+}
+
+body > header > nav > ul a:hover{
+    text-underline-offset: 0.5rem;
+}
+
+body > main {
+    display: grid;
+    grid-template-rows: 15vh 60vh;
+    background-color: #D6EFFF;
+    color:#0a090c;
+    grid-template-columns: 10% 80% 10%;
+}
+
+body > main > h2 {
+    display: grid;
+    grid-column: 2 / 3;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.5rem;
+    align-self: center;
+    justify-self: center;
+    color: #4e148c;
+}
+
+body > main > form {
+    grid-column: 2 / 3;
+}
+
+body > footer {
+    display: grid;
+    background-color: #4e148c;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 300;
+}

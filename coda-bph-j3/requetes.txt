@@ -1,0 +1,82 @@
+Exercice 1 : 
+
+1 : 
+
+SELECT *
+FROM users;
+
+2 :
+
+SELECT *
+FROM users
+WHERE id = 3;
+
+3 : 
+
+SELECT username
+FROM users
+WHERE id = 2;
+
+4 : 
+
+SELECT * 
+FROM users 
+ORDER BY id DESC;
+
+5 : 
+
+SELECT * 
+FROM users 
+WHERE id > 3 
+ORDER BY id ASC LIMIT 3;
+
+Exercice 2 : 
+
+1 : 
+
+INSERT INTO users ( usernames, email, job )
+VALUES ( "Spiderman", "peter.parker@daily-bugle.com", "1" );
+
+2 : 
+
+INSERT INTO job ( name )
+VALUES ( "lycéen" );
+
+Exercice 3 : 
+
+
+1 : 
+
+SELECT users.username, jobs.name
+FROM jobs JOIN users
+ON users.job = jobs.id
+WHERE users.id = 7;
+
+2 : 
+
+SELECT users.username, jobs.name
+FROM jobs JOIN users
+ON users.job = jobs.id
+WHERE users.id;
+
+3 : 
+
+SELECT DISTINCT users.email, jobs.name
+FROM jobs
+JOIN users ON users.job = jobs.id
+WHERE jobs.id = 1;
+
+Exercice 4 :
+
+UPDATE users
+SET job = '5'
+WHERE id = 7;
+
+Exercice 5 : 
+
+DELETE FROM users
+WHERE id = 6;
+
+
+
+

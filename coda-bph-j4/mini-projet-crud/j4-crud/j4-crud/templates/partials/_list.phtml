@@ -1,0 +1,38 @@
+<?php
+require "controllers/get-all-users.php";
+?>
+
+<main class="container py-5">
+    <h1 class="my-5">Liste des utilisateurs</h1>
+    <a href="index.php?route=create" class="btn btn-primary">Créer un utilisateur</a>
+    <table class="table table-striped mt-5">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($users as $user) : ?>
+            <tr>
+                <td>
+                    <?= $user['id'] ?>
+                </td>
+                <td>
+                    <?= $user['username'] ?>
+                </td>
+                <td>
+                    <?= $user['email'] ?>
+                </td>
+                <td>
+                    <a class="btn btn-info mx-1" href="index.php?route=show&user=<?= $user['id'] ?>"><span class="bi bi-eye"></span></a>
+                    <a class="btn btn-success mx-1" href="index.php?route=update&user=<?= $user['id'] ?>"><span class="bi bi-pencil"></span></a>
+                    <a class="btn btn-danger mx-1" href="index.php?route=delete&user=<?= $user['id'] ?>"><span class="bi bi-trash3"></span></a>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</main>
