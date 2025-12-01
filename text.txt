@@ -1,0 +1,2 @@
+il y a une classe qui se nomme " personnage "
+la fonction " constructeur " et en public  / 
