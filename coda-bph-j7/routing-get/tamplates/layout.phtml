@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8" />
+		<title>Exercice Routeur MVC</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li>
+						<a href="index.php">Accueil</a>
+					</li>
+					<li>
+						<a href="index.php?route=a-propos">À propos</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<?php
+		// Inclure les vues depuis le même dossier `tamplates`
+		require __DIR__ . '/home.phtml';
+		require __DIR__ . '/about.phtml';
+		require __DIR__ . '/notFound.phtml';
+	?>
+	</body>
+</html>
