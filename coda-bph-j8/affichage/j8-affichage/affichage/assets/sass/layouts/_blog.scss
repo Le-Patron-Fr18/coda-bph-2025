@@ -1,0 +1,96 @@
+#blog {
+  display: grid;
+  padding: 3rem 5rem;
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2.5rem;
+    row-gap: 4rem;
+
+    li {
+      display: grid;
+
+      article {
+        display: grid;
+        grid-template-rows: 6rem 8rem 4rem;
+        padding: 1rem;
+
+        header {
+          display: grid;
+          align-items: center;
+          justify-content: center;
+
+          h2 {
+            @include title(1.2rem);
+            line-height: 1.5rem;
+          }
+        }
+
+        section {
+          display: grid;
+          align-items: center;
+          justify-content: center;
+
+          p {
+            font-size: 1.2rem;
+          }
+        }
+
+        footer {
+          display: grid;
+          align-items: center;
+          justify-content: center;
+
+          a {
+            padding: 0.5rem 1.5rem;
+            @include title(0.8rem);
+            text-decoration: none;
+          }
+        }
+
+        &:hover {
+          background-color: $grey;
+          transition: .5s;
+        }
+      }
+
+      &:nth-of-type(odd) {
+        h2 {
+          color: $green;
+        }
+
+        a {
+          background-color: $green;
+          color:$black;
+
+          &:hover {
+            border: 1px solid $green;
+            background-color: $black;
+            color:$green;
+            transition: .5s;
+          }
+        }
+      }
+
+      &:nth-of-type(even) {
+        h2 {
+          color: $red;
+        }
+
+        a {
+          background-color: $red;
+          color:$black;
+
+          &:hover {
+            border: 1px solid $red;
+            background-color: $black;
+            color:$red;
+            transition: .5s;
+          }
+        }
+      }
+
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&family=Press+Start+2P&display=swap');
+
+@mixin title($size: 1rem)
+{
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: $size;
+}
+
+@mixin content($weight: 400, $size: 1rem, $style: normal)
+{
+  font-family: "Onest", sans-serif;
+  font-weight: $weight;
+  font-style: $style;
+  font-size: $size;
+}

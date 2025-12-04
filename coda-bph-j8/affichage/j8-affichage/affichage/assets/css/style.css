@@ -1,0 +1,246 @@
+/* Libraries */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Onest:wght@100..900&family=Press+Start+2P&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Variables */
+/* Layouts */
+#blog {
+  display: grid;
+  padding: 3rem 5rem;
+}
+#blog ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2.5rem;
+  row-gap: 4rem;
+}
+#blog ul li {
+  display: grid;
+}
+#blog ul li article {
+  display: grid;
+  grid-template-rows: 6rem 8rem 4rem;
+  padding: 1rem;
+}
+#blog ul li article header {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+#blog ul li article header h2 {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+#blog ul li article section {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+#blog ul li article section p {
+  font-size: 1.2rem;
+}
+#blog ul li article footer {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+#blog ul li article footer a {
+  padding: 0.5rem 1.5rem;
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+#blog ul li article:hover {
+  background-color: #062837;
+  transition: 0.5s;
+}
+#blog ul li:nth-of-type(odd) h2 {
+  color: #4cee7e;
+}
+#blog ul li:nth-of-type(odd) a {
+  background-color: #4cee7e;
+  color: #020e13;
+}
+#blog ul li:nth-of-type(odd) a:hover {
+  border: 1px solid #4cee7e;
+  background-color: #020e13;
+  color: #4cee7e;
+  transition: 0.5s;
+}
+#blog ul li:nth-of-type(even) h2 {
+  color: #e85b69;
+}
+#blog ul li:nth-of-type(even) a {
+  background-color: #e85b69;
+  color: #020e13;
+}
+#blog ul li:nth-of-type(even) a:hover {
+  border: 1px solid #e85b69;
+  background-color: #020e13;
+  color: #e85b69;
+  transition: 0.5s;
+}
+
+#article {
+  display: grid;
+  width: 80%;
+  margin: auto;
+}
+#article > h2 {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5rem;
+  color: #427cf5;
+  margin-bottom: 3rem;
+  line-height: 3rem;
+}
+#article article h2 {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  color: #e85b69;
+  margin-bottom: 2.5rem;
+  line-height: 3rem;
+}
+#article article h3 {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2rem;
+  color: #4cee7e;
+  margin-bottom: 2rem;
+  line-height: 2.5rem;
+}
+#article article p {
+  font-family: "Onest", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+#article article pre {
+  background-color: #062837;
+  padding: 1rem;
+  font-family: monospace;
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+#article article code {
+  background-color: #062837;
+  font-family: monospace;
+  font-size: 1rem;
+  padding: 0.25rem;
+}
+
+/* General */
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+  background-color: #020e13;
+  font-family: "Onest", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  color: white;
+}
+
+body {
+  display: grid;
+  grid-template-rows: minmax(15vh, max-content) minmax(75vh, max-content) minmax(10vh, max-content);
+}
+body > header {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+body > header h1 {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3rem;
+  color: #efec4f;
+}
+body > footer {
+  font-family: "Onest", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 0.9rem;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  color: #427cf5;
+}
+
+#not-found {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+#not-found h1 {
+  font-family: "Onest", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2.5rem;
+}
+
+/*# sourceMappingURL=style.css.map */

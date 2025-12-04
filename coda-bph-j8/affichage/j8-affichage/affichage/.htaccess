@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+
+	# Ne pas réécrire les fichiers ou dossiers existants
+	RewriteCond %{REQUEST_FILENAME} -f [OR]
+	RewriteCond %{REQUEST_FILENAME} -d
+	RewriteRule ^ - [L]
+
+	# Réécrire tout le reste vers index.php en passant le chemin dans le paramètre `path`
+	RewriteRule ^(.*)$ index.php?path=$1 [QSA,L]
+</IfModule>
+
+# Si mod_rewrite n'est pas activé, une simple redirection peut être utilisée (optionnel)
+# ErrorDocument 404 /index.php

@@ -1,0 +1,53 @@
+/* Libraries */
+@import "libs/reset";
+
+/* Variables */
+@import "vars/colors";
+@import "vars/fonts";
+
+/* Layouts */
+@import "layouts/blog";
+@import "layouts/article";
+
+/* General */
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+  background-color: $black;
+  @include content();
+  color:$white;
+}
+
+body {
+  display: grid;
+  grid-template-rows: minmax(15vh, max-content) minmax(75vh, max-content) minmax(10vh, max-content);
+
+  & > header {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      @include title(3rem);
+      color: $yellow;
+    }
+  }
+
+  & > footer {
+    @include content(300, 0.9rem);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    color: $blue;
+  }
+}
+
+#not-found {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    @include content(600, 2.5rem);
+  }
+}

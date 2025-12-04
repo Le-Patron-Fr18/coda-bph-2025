@@ -1,0 +1,17 @@
+<?php
+require "data/homepage-data.php";
+?>
+
+<header>
+    <nav>
+        <div>
+            <img src ="assets/images/vampire-bat.svg" />
+            <ul>
+                <h3><?php echo htmlspecialchars($data["name"]); ?></h3>
+                <?php foreach ($data["links"] as $link): ?>
+                <?= htmlspecialchars($link) ?>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </nav>
+</header>

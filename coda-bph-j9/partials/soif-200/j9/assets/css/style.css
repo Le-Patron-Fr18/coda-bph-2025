@@ -1,0 +1,16 @@
+
+.color() {
+
+$white: rgba(255, 255, 255, 1);
+$black: rgba(0, 0, 0, 1);
+$green: rgba(0, 100, 102, 1);
+$dark-green: rgba(11, 82, 91, 1);
+$darker-green: rgba(27, 58, 75, 1);
+$dark-blue: rgba(39, 38, 64, 1);
+$purple: rgba(77, 25, 77, 1);
+
+$background-gradient : linear-gradient(to bottom, rgba(27, 58, 75, 0.9), rgba(39, 38, 64, 0.9), rgba(77, 25, 77, 0.9));
+$background-gradient2 : linear-gradient(to bottom, rgba(77, 25, 77, 1), rgba(39, 38, 64, 1), rgba(27, 58, 75, 1));
+$background-gradient3 : linear-gradient(to bottom, rgba(27, 58, 75, 1), rgba(39, 38, 64, 1), rgba(77, 25, 77, 1));
+
+}
