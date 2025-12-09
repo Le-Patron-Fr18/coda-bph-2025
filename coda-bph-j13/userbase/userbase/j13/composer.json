@@ -1,0 +1,16 @@
+{
+  "name": "votrenom/exercice-back-office",
+  "require": {
+    "vlucas/phpdotenv": "^5.6",
+    "symfony/var-dumper": "^7.0",
+    "twig/twig": "^3.22"
+  },
+  "autoload": {
+    "classmap": [
+      "controllers/",
+      "managers/",
+      "models/",
+      "services/"
+    ]
+  }
+}

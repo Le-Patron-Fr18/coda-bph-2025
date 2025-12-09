@@ -1,0 +1,24 @@
+{% extends "layout.html.twig" %}
+
+{% block header %}
+    {% include "partials/_header.html.twig" %}
+{% endblock %}
+
+{% block main %}
+    <main class="py-5 container">
+        <h1>Connexion</h1>
+        <form method="post" action="index.php?route=login">
+            <fieldset class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" id="email" class="form-control">
+            </fieldset>
+            <fieldset class="mb-3">
+                <label for="password" class="form-label">Mot de passe</label>
+                <input type="password" name="password" id="password" class="form-control">
+            </fieldset>
+            <fieldset>
+                <button type="submit" class="btn btn-primary">Se connecter</button>
+            </fieldset>
+        </form>
+    </main>
+{% endblock %}

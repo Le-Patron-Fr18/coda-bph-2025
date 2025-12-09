@@ -1,0 +1,40 @@
+{% extends "layout.html.twig" %}
+
+{% block header %}
+    {% include "partials/_header-admin.html.twig" %}
+{% endblock %}
+
+{% block main %}
+    <main class="py-5 container">
+        <h1>Modifier un utilisateur</h1>
+        <form method="post" action="index.php?route=update&id=">
+            <fieldset class="mb-3">
+                <label for="firstName" class="form-label">Prénom</label>
+                <input type="text" name="firstName" id="firstName" class="form-control">
+            </fieldset>
+            <fieldset class="mb-3">
+                <label for="lastName" class="form-label">Nom</label>
+                <input type="text" name="lastName" id="lastName" class="form-control">
+            </fieldset>
+            <fieldset class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" id="email" class="form-control">
+            </fieldset>
+            <fieldset class="mb-3">
+                <label for="password" class="form-label">Mot de passe</label>
+                <input type="password" name="password" id="password" class="form-control">
+            </fieldset>
+            <fieldset class="mb-3">
+                <label for="role" class="form-label">Rôle</label>
+                <select class="form-select" id="role" name="role">
+                    <option selected>Choisir un rôle</option>
+                    <option value="USER">User</option>
+                    <option value="ADMIN">Admin</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <button type="submit" class="btn btn-primary">Enregistrer</button>
+            </fieldset>
+        </form>
+    </main>
+{% endblock %}

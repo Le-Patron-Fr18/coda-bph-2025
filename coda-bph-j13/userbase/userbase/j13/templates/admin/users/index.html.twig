@@ -1,0 +1,57 @@
+{% extends "layout.html.twig" %}
+
+{% block header %}
+    {% include "partials/_header-admin.html.twig" %}
+{% endblock %}
+
+{% block main %}
+    <main class="py-5 container">
+        <h1 class="mb-3">Liste des utilisateurs</h1>
+        <a href="index.php?route=create" class="btn btn-primary">Créer un utilisateur</a>
+        <table class="table table-striped mt-3">
+            <thead>
+                <tr>
+                    <th>
+                        #
+                    </th>
+                    <th>
+                        Prénom
+                    </th>
+                    <th>
+                        Nom
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>john.doe@email.com</td>
+                    <td>
+                        <a href="index.php?route=show&id=1" class="btn btn-info"><span class="bi bi-eye"></span></a>
+                        <a href="index.php?route=update&id=1" class="btn btn-success"><span class="bi bi-pencil"></span></a>
+                        <a href="index.php?route=delete&id=1" class="btn btn-danger"><span class="bi bi-trash"></span></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jane</td>
+                    <td>Doe</td>
+                    <td>jane.doe@email.com</td>
+                    <td>
+                        <a href="index.php?route=show&id=2" class="btn btn-info"><span class="bi bi-eye"></span></a>
+                        <a href="index.php?route=update&id=2" class="btn btn-success"><span class="bi bi-pencil"></span></a>
+                        <a href="index.php?route=delete&id=2" class="btn btn-danger"><span class="bi bi-trash"></span></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+{% endblock %}

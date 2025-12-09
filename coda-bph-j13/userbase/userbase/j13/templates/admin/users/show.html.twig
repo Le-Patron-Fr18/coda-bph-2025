@@ -1,0 +1,20 @@
+{% extends "layout.html.twig" %}
+
+{% block header %}
+    {% include "partials/_header-admin.html.twig" %}
+{% endblock %}
+
+{% block main %}
+    <main class="container py-5">
+        <h1>Détails utilisateur</h1>
+        <div class="card mt-3" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Prénom et Nom</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">Email</h6>
+                <p class="card-text">Rôle</p>
+                <a href="index.php?route=update&id=" class="card-link">Modifier</a>
+                <a href="index.php?route=delete&id=" class="card-link">Supprimer</a>
+            </div>
+        </div>
+    </main>
+{% endblock %}

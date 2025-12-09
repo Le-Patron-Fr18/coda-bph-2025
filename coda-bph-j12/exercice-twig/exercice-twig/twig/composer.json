@@ -1,0 +1,15 @@
+{
+  "name": "user/nom-du-projet",
+  "require": {
+    "twig/twig": "^3.22"
+  },
+  "autoload": {
+    "classmap": [
+      "controllers/",
+      "services/"
+    ]
+  },
+  "require-dev": {
+    "symfony/var-dumper": "^8.0"
+  }
+}

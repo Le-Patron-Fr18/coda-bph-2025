@@ -1,0 +1,17 @@
+{
+    "name": "user/coda-j12",
+    "require": {
+        "twig/twig": "^3.22"
+    },
+  "autoload": {
+    "classmap": [
+      "controllers/",
+      "managers/",
+      "models/",
+      "services/"
+    ]
+  },
+    "require-dev": {
+        "symfony/var-dumper": "^7.4"
+    }
+}
