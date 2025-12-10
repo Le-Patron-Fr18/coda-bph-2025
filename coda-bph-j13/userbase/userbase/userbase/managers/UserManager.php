@@ -21,6 +21,7 @@ class UserManager extends AbstractManager
         {
             $user = new User($item["firstname"], $item["lastname"], $item["email"], $item["password"], $item["role"], $item["id"]);
             $users[] = $user;
+            }
         }
 
         return $users;
