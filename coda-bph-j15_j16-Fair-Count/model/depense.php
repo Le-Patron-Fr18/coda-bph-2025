@@ -2,7 +2,7 @@
 
 class users
 {
-    public function __construct(private int $id, private string $nom, private int $prenom, private string $email, private string $password)
+    public function __construct(private int $id, private string $prenom, private int $montant, private string $motif, private string $id_life)
     {
 
     }
@@ -17,53 +17,56 @@ class users
         $this->id = $id;
     }
 
-    public function getNom(): string
-    {
-        return $this->nom;
-    }
-
-    public function setNom(string $nom ): void
-    {
-        $this->nom = $nom;
-    }
-
-    public function getPrenom(): int
+    public function getPrenom(): string
     {
         return $this->prenom;
     }
 
-    public function setPrenom(int $prenom): void
+    public function setPrenom(string $prenom): void
     {
         $this->prenom = $prenom;
     }
 
-    public function getEmail(): string
+    public function getMontant(): int
     {
-        return $this->email;
+        return $this->montant;
     }
 
-    public function setEmail(string $email): void
+    public function setMontant(int $montant): void
     {
-        $this->email = $email;
+        $this->montant = $montant;
     }
 
-    public function getPassword(): string
+    public function getMotif(): string
     {
-        return $this->password;
+        return $this->motif;
     }
 
-    public function setPassword(string $password): void
+    public function setMotif(string $motif): void
     {
-        $this->password = $password;
+        $this->motif = $motif;
     }
+
+    public function getId_life(): string
+    {
+        return $this->id_life;
+    }
+
+    public function setId_life(string $id_life): void
+    {
+        $this->id_life = $id_life;
+    }
+
+
+
     public function toArray() : array
     {
         return [
             'id' => $this->id,
-            'nom' => $this->nom,
             'prenom' => $this->prenom,
-            'email' => $this->email,
-            'password' => $this->password
+            'montant' => $this->montant,
+            'motif' => $this->motif,
+            'id_life' => $this->id_life
         ];
     }
 }

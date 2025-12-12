@@ -1,58 +1,67 @@
 <?php
-
-class DepenseManager extends AbstractManager
-{
+class DepenseManager extends AbstractManager {
     public function __construct()
     {
         parent::__construct();
     }
-
-    public function create(Depense $Depense) : int
+    public function findAll() : array
+    {
+        $query = $this->db->prepare('SELECT * FROM depense');
+        $query->execute();
+        $Depense = $query->fetchAll(PDO::FETCH_ASSOC);
+        $Depense_return = [];
+        foreach ($Depense as $i => $depense)
         {
-            $query = $this->db->prepare('INSERT INTO Depense (id, prenom, montant, motif, id_life) VALUES (:id, :prenom, :montant, :motif, :id_life)');
-            $parameters = [
-                'id' => $Depense->getId(),
-                'prenom' => $Depense->getPrenom(),
-                'montant' => $Depense->getMontant(),
-                'motif' => $Depense->getMotif(),
-                'id_life' => $Depense->getIdLife()
-            ];
-            $query->execute($parameters);
-
-            return (int)$this->db->lastInsertId();
+            $depense_temp = new Depense; 
+            $depense_temp->setId($depense["id"]);
+            $depense_temp->setNom($depense["prenom"]);
+            $depense_temp->setPrenom($depense["motif"]);
+            $depense_temp->setEmail($depense["id_life"]);
+            $Depense_return[] = $depense_temp;
         }
-
+        return $Depense_return;
+    }
     public function findOne(int $id) : ?Depense
+    {
+        $query = $this->db->prepare('SELECT * FROM depense WHERE id = :id');
+        $parameters = [
+            'id' => $id
+        ];
+        $query->execute($parameters);
+        $depense = $query->fetch(PDO::FETCH_ASSOC);
+        $depense_temp = new Depense;
+        if($depense === null)
         {
-            $query = $this->db->prepare('SELECT * FROM Depense WHERE id = :id');
-            $parameters = [
-                'id' => $id
-            ];
-            $query->execute($parameters);
-            $result = $query->fetch(PDO::FETCH_ASSOC);
-
-            if ($result) {
-                return new Depense($result["prenom"], $result["montant"], $result["motif"], $result["id_life"], $result["id"]);
-            }
-
             return null;
         }
-
-    public function findAll() : array
+        else
         {
-            $query = $this->db->prepare('SELECT * FROM Depense');
-            $parameters = [
-
-            ];
-            $query->execute($parameters);
-            $results = $query->fetchAll(PDO::FETCH_ASSOC);
-            $users = [];
-
-        foreach($results as $result)
-            {
-                $users[] = new Depense($result["prenom"], $result["montant"], $result["motif"], $result["id_life"], $result["id"]);
-            }
-
-            return $users;
+            $depHints = new Depense; 
+            $depense_temp->setId($depense["id"]);
+            $depense_temp->setNom($depense["prenom"]);
+            $depense_temp->setPrenom($depense["motif"]);
+            $depense_temp->setEmail($depense["id_life"]);
+            return $depense_temp;
+        }
+    }
+     public function findAllFromGame(int $id) : array
+    {
+        $query = $this->db->prepare('SELECT * FROM depense WHERE game = :id');
+        $parameters = [
+            'id' => $id
+        ];
+        $query->execute($parameters);
+        $depenses = $query->fetchAll(PDO::FETCH_ASSOC);
+        $depense_return = [];
+        foreach ($depenses as $i => $depense)
+        {
+            $user_temp = new User; 
+            $depense_temp->setId($depense["id"]);
+            $depense_temp->setNom($depense["prenom"]);
+            $depense_temp->setPrenom($depense["motif"]);
+            $depense_temp->setEmail($depense["id_life"]);
+            $depense_return[] = $depense_temp;
+        }
+        return $depense_return;
     }
 }
