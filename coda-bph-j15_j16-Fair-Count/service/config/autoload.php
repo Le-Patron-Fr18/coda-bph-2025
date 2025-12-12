@@ -4,11 +4,11 @@ require "model/remboursement.php";
 require "model/user.php";
 require "model/life.php";
 
-require "manager/AbstractManager.php";
-require "manager/DepenseManager.php";
-require "manager/RemboursementManager.php";
-require "manager/UserManager.php";
-require "manager/LifeManager.php";
+require "managers/AbstractManager.php";
+require "managers/DepenseManager.php";
+require "managers/RemboursementManager.php";
+require "managers/UserManager.php";
+require "managers/LifeManager.php";
 
 
 require "controllers/AbstractController.php";
