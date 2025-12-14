@@ -1,0 +1,23 @@
+{% extends "layout.html.twig" %}
+
+{# Le layout.html.twig n'a pas de block title, mais c'est une bonne pratique de le définir. #}
+{# Vous pourriez ajouter <title>{% block title %}Mon Site{% endblock %}</title> dans votre layout. #}
+
+{# Contenu principal de la page de connexion #}
+{% block main %}
+    <div class="container">
+        <h1>Connexion</h1>
+
+        <form method="POST">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Se connecter</button>
+        </form>
+    </div>
+{% endblock %}

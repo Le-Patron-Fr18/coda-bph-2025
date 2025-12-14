@@ -1,0 +1,47 @@
+{# On suppose une structure de base avec un template layout.html.twig #}
+{% extends "layout.html.twig" %}
+
+{# On définit le titre de la page #}
+{% block title %}Création de compte{% endblock %}
+
+{# Contenu principal de la page #}
+{% block main %}
+    <div class="container">
+        <h1>Créer un nouveau compte</h1>
+
+        {# Affiche les messages d'erreur s'il y en a #}
+        {% if errors is defined and errors|length > 0 %}
+            <div class="alert alert-danger">
+                {% for error in errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {# Le formulaire enverra les données en POST à la page actuelle (ou à une route spécifique) #}
+        <form method="POST">
+            <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirmez le mot de passe</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary mr-2">S'inscrire</button>
+            <a href="index.php?page=connexion" class="btn btn-secondary">Retour à la connexion</a>
+        </form>
+    </div>
+{% endblock %}

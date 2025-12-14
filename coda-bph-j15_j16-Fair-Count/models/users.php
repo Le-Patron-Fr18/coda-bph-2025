@@ -3,7 +3,7 @@
 class users
 {
     private ?int $id = null;
-    public function __construct(private string $nom, private int $prenom, private string $email, private string $password)
+    public function __construct(private string $nom, private string $prenom, private string $email, private string $password)
     {
 
     }
@@ -28,12 +28,12 @@ class users
         $this->nom = $nom;
     }
 
-    public function getPrenom(): int
+    public function getPrenom(): string
     {
         return $this->prenom;
     }
 
-    public function setPrenom(int $prenom): void
+    public function setPrenom(string $prenom): void
     {
         $this->prenom = $prenom;
     }
