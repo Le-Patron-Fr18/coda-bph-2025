@@ -1,6 +1,6 @@
 <?php
 
-class users
+class depense
 {
     public function __construct(private int $id, private string $prenom, private int $montant, private string $motif, private string $id_life)
     {

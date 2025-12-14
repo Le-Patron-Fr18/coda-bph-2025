@@ -1,6 +1,6 @@
 <?php
 
-class users
+class remboursement
 {
     public function __construct(private int $id, private string $donner_prenom, private int $coût, private string $recevoir_prenom)
     {

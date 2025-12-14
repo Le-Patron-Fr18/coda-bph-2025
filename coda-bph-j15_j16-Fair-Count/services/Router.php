@@ -32,17 +32,10 @@ class Router
             }
             else
             {
-                // si on m'envoie une route qui n'existe pas
-                $ctrl = new DefaultController();
-                // j'affiche la page d'erreur 404
-                $ctrl->notFound();
             }
         }
         else // si pas de route
         {
-            $ctrl = new DefaultController();
-            // j'affiche la page d'accueil
-            $ctrl->home();
         }
     }
 }

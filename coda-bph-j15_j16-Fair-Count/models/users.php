@@ -2,7 +2,8 @@
 
 class users
 {
-    public function __construct(private int $id, private string $nom, private int $prenom, private string $email, private string $password)
+    private ?int $id = null;
+    public function __construct(private string $nom, private int $prenom, private string $email, private string $password)
     {
 
     }

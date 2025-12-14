@@ -1,6 +1,6 @@
 <?php
 
-class users
+class life
 {
     public function __construct(private int $id, private string $daly)
     {

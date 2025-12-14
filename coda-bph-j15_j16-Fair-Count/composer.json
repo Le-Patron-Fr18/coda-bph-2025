@@ -1,5 +1,5 @@
 {
-  "name": "votrenom/exercice-api",
+  "name": "thomas/exercice-fair-count",
   "require": {
     "vlucas/phpdotenv": "^5.6",
     "symfony/var-dumper": "^7.0",
