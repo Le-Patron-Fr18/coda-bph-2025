@@ -1,21 +1,24 @@
 <?php
-
-abstract class AbstractManager
+class AbstractManager
 {
     protected PDO $db;
 
     public function __construct()
     {
-        $dbHost = $_ENV['DB_HOST'];
-        $dbUser = $_ENV['DB_USER'];
-        $dbPass = $_ENV['DB_PASS'];
-        $dbName = $_ENV['DB_NAME'];
+        $host = $_ENV['DB_HOST'] ?? 'localhost';
+        $port = $_ENV['DB_PORT'] ?? '3306';
+        $dbname = $_ENV['DB_NAME'] ?? 'faircount';
+        $user = $_ENV['DB_USER'] ?? 'root';
+        $pass = $_ENV['DB_PASS'] ?? '123';
 
-        $connexion = "mysql:host=".$dbHost.";port=3306;charset=utf8;dbname=".$dbName;
-        $this->db = new PDO(
-            $connexion,
-            $dbUser,
-            $dbPass
-        );
+        $dsn = "mysql:host={$host};port={$port};dbname={$dbname};charset=utf8";
+
+        try {
+            $this->db = new PDO($dsn, $user, $pass);
+            $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            // En développement, vous pouvez afficher l'erreur. En production, loguez-la.
+            die("Erreur de connexion à la base de données : " . $e->getMessage());
+        }
     }
 }
