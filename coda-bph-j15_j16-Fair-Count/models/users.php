@@ -2,13 +2,18 @@
 
 class users
 {
-    private ?int $id = null;
-    public function __construct(private string $nom, private string $prenom, private string $email, private string $password)
-    {
+    private ?int $id;
 
+    public function __construct(private string $nom, private string $prenom, private string $email, private string $password, ?int $id = null)
+    {
+        $this->id = $id;
     }
 
-    public function getId(): int
+    /**
+     * La propriété id peut être nulle si l'utilisateur n'est pas encore en BDD.
+     * Le type de retour doit donc être ?int (int ou null).
+     */
+    public function getId(): ?int
     {
         return $this->id;
     }

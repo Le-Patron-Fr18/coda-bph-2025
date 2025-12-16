@@ -17,8 +17,7 @@ class CompteManager extends AbstractManager
         if($item)
         {
             // Crée un objet users à partir des données de la BDD
-            $user = new users($item["nom"], $item["prenom"], $item["email"], $item["password"]);
-            $user->setId($item['id']);
+            $user = new users($item["nom"], $item["prenom"], $item["email"], $item["password"], (int)$item['id']);
             return $user;
         }
 

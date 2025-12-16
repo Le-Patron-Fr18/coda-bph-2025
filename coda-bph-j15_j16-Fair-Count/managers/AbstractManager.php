@@ -9,7 +9,7 @@ class AbstractManager
         $port = $_ENV['DB_PORT'] ?? '3306';
         $dbname = $_ENV['DB_NAME'] ?? 'faircount';
         $user = $_ENV['DB_USER'] ?? 'root';
-        $pass = $_ENV['DB_PASS'] ?? '123';
+        $pass = $_ENV['DB_PASS'] ?? 'demopma';
 
         $dsn = "mysql:host={$host};port={$port};dbname={$dbname};charset=utf8";
 
